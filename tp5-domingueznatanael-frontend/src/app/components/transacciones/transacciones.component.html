@@ -1,1 +1,50 @@
-<p>transacciones works!</p>
+<div>
+    <button class="btn btn-info text-white" (click)="obtenerTransacciones()">RECUPERAR TODOS</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">CANTIDAD</th>
+          <th scope="col" class="text-center">MONEDA ORIGEN</th>
+          <th scope="col" class="text-center">MONEDA DESTINO</th>
+          <th scope="col" class="text-center">TOTAL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of transacciones">
+          <td class="text-center">{{t["cantidadOrigen"]}}</td>
+          <td class="text-center">{{t["monedaOrigen"]}}</td>
+          <td class="text-center">{{t["monedaDestino"]}}</td>
+          <td class="text-center">{{t["cantidadDestino"] | currency}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <br>
+  <div>
+    <label class="form-label" for="txtMonedaOrigen">Moneda Origen:</label>
+    <input class="form-control" type="text" [(ngModel)]="origen">
+    <label class="form-label" for="txtMonedaDestino">Moneda Destino:</label>
+    <input class="form-control" type="text" [(ngModel)]="destino">
+    <br>
+    <button class="btn btn-info text-white" (click)="obtenerTransaccionesPorDivisas()">RECUPERAR POR FILTRO</button>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">CANTIDAD</th>
+          <th scope="col" class="text-center">MONEDA ORIGEN</th>
+          <th scope="col" class="text-center">MONEDA DESTINO</th>
+          <th scope="col" class="text-center">TOTAL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tf of transaccionesFiltradas">
+          <td class="text-center">{{tf["cantidadOrigen"]}}</td>
+          <td class="text-center">{{tf["monedaOrigen"]}}</td>
+          <td class="text-center">{{tf["monedaDestino"]}}</td>
+          <td class="text-center">{{tf["cantidadDestino"] | currency}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

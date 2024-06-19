@@ -1,1 +1,25 @@
-<p>transaccion-form works!</p>
+<button class="btn btn-info" (click)="obtenerMonedas()">Cargar Monedas</button>
+<br>
+<div class="card col-sm-12 col-md-4 bg-primary">
+    <form action="#" class="form">
+        <h4 class="text-white text-center">Conversor de Divisas</h4>
+        <hr class="text-white">
+        <label for="txtCantidad" class="form-label text-white">Cantidad</label>
+        <input type="text" name="cantidad" id="txtCantidad" class="form-control text-end bg-white"
+            placeholder="Cantidad" [(ngModel)]="monto" />
+        <label for="txtDe" class="form-label text-white">De</label>
+        <select class="form-select" name="divisas" id="txtDe" [(ngModel)]="origen">
+            <option value={{m.symbol}} *ngFor="let m of monedas" >{{m.name}}</option>
+        </select>
+        <label class="form-label text-white" for="txtA">A</label>
+        <select class="form-select" name="cambio" id="txtA" [(ngModel)]="destino">
+            <option value={{m.symbol}} *ngFor="let m of monedas" >{{m.name}}</option>
+        </select>
+        <br>
+
+        <input class="form-control bg-white" type="text" name="resultado" id="txtResultado"
+            value={{resultado}}>
+        <br>
+        <button class="form-control btn bg-warning" (click)="convertir()">Convertir<i class="bi bi-arrow-right-short"></i></button>
+    </form>
+</div>

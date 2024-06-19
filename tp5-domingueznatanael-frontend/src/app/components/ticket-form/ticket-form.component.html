@@ -1,1 +1,52 @@
-<p>ticket-form works!</p>
+<form class="card my-5" style="width: 600px; height: 500px;">
+    <div class="card-header">Tickets</div>
+    <div class="card-body">
+      <div class="row form-group">
+        <div class="mb-3">
+            <label for="idDni" class="form-label">DNI: </label>
+            <input type="number" class="form-control" id="idDni" [(ngModel)]="ticket.dni" name="dni" autocomplete="off">
+        </div>
+      <div class="mb-3">
+        <label class="col-sm-12 col-md-4" for="PrecioReal">Precio Real</label>
+        <input
+          class="form-control col-sm-12 col-md-8"
+          type="number"
+          id="PrecioReal"
+          name="precio"
+          [(ngModel)]="ticket.precioReal"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="col-sm-12 col-md-4" for="tipoEspectador">Tipo Espectador</label>
+        <select
+          class="form-select input"
+          id="tipoEspectador"
+          name="espectador"
+          [(ngModel)]="ticket.tipoEspectador"
+          class="form-select bg-light"
+        >
+          <option selected disabled>Sel. una opción</option>
+          <option value="l">Local</option>
+          <option value="e">Extranjero</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="col-sm-12 col-md-4" for="fechaCobro">Fecha Cobro</label>
+        <input
+          class="form-control col-sm-12 col-md-8"
+          type="date"
+          id="fechaCobro"
+          name="cobro"
+          [(ngModel)]="ticket.fechaCobro"
+        />
+      </div>
+      <br>
+        <button type="button" class="btn btn-primary mb-3" (click)="registrarTicket()">
+          Enviar
+        </button>
+        <button *ngIf="accion == 'update'" type="button" class="btn btn-warning" 
+       (click)=" modificarTicket(ticket)">Modificar</button>
+        <button type="button" class="btn btn-info" (click)="volverAtras()">Volver</button>
+    </div>
+    </div>
+</form>
