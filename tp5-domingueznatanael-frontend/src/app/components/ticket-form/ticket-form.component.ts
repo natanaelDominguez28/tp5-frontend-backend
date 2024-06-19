@@ -54,7 +54,11 @@ cargarTicket(id: string) {
   //this.ticket = this.ticketService.getTicketById(id);
   this.ticketService.getTickets().subscribe(
     (result)=>{
-      this.ticket = result;
+      this.ticket._id = result._id;
+      this.ticket.dni = result.Espectador.dni;
+      this.ticket.precioReal = result.precioReal;
+      this.ticket.tipoEspectador = result.Categoria.nombre;
+      this.ticket.fechaCobro = result.fechaCobro;
       console.log(this.ticket);
     }
   );

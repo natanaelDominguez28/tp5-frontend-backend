@@ -14,10 +14,10 @@ productoCtrl.createProducto = async (req, res) => {
     }
     
 }
-productoCtrl.getProductos = async (req, res) => {
+/*productoCtrl.getProductos = async (req, res) => {
     const productos = await Producto.find();
     res.json(productos);
-}
+}*/
 
 productoCtrl.getProductosDestacados = async (req, res) => {
     try {

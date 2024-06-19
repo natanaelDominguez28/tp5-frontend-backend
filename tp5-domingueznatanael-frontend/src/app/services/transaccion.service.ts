@@ -54,6 +54,6 @@ export class TransaccionService {
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
     }
-    return this._http.get('http://localhost:3000/api/transaccion'+'?monedaOrigen='+origen+'&monedaDestino='+destino,httpOptions);
+    return this._http.get('http://localhost:3000/api/transaccion/divisas'+'?monedaOrigen='+origen+'&monedaDestino='+destino,httpOptions);
   }
 }

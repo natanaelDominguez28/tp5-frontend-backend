@@ -34,25 +34,10 @@ export class TransaccionesComponent {
 
   //get de transacciones por moneda de origen y destino
   obtenerTransaccionesPorDivisas(){
-    console.log(this.origen);
-    console.log(this.destino);
-    
-    
     this.transaccionService.getTransaccionesPorOrigenYDestino(this.origen, this.destino).subscribe(
       (data) => {
-        let conversor = new Transaccion();
-        Object.assign(conversor,data);
-        this.transaccionesFiltradas.push(conversor);
+        this.transaccionesFiltradas = data;
         console.log(this.transaccionesFiltradas);
-        
-        
-        /*if(this.origen==data.monedaOrigen && this.destino==data.monedaDestino){
-          let conversor = new Conversor();
-          Object.assign(conversor,data);
-          this.transaccionesFiltradas.push(conversor);
-        }*/
-
-        
       },
       error => {
         console.log(error);

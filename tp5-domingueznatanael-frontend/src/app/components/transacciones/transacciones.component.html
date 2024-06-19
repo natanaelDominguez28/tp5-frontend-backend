@@ -40,10 +40,10 @@
       </thead>
       <tbody>
         <tr *ngFor="let tf of transaccionesFiltradas">
-          <td class="text-center">{{tf["cantidadOrigen"]}}</td>
-          <td class="text-center">{{tf["monedaOrigen"]}}</td>
-          <td class="text-center">{{tf["monedaDestino"]}}</td>
-          <td class="text-center">{{tf["cantidadDestino"] | currency}}</td>
+          <td class="text-center">{{tf.cantidadOrigen}}</td>
+          <td class="text-center">{{tf.monedaOrigen}}</td>
+          <td class="text-center">{{tf.monedaDestino}}</td>
+          <td class="text-center">{{tf.cantidadDestino| currency}}</td>
         </tr>
       </tbody>
     </table>

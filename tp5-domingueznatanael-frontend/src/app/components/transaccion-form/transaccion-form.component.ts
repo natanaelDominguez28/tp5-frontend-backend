@@ -47,7 +47,7 @@ export class TransaccionFormComponent {
         (result) => {
           console.log(result);
           this.resultado = result.result.convertedAmount;
-          //this.conversor = new Transaccion(this.origen,this.monto,this.destino,this.resultado);
+          this.conversor = new Transaccion();
           Object.assign(this.conversor,result);
           this.crearTransaccion(this.conversor);
         }
