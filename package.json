@@ -1,0 +1,11 @@
+{
+  "name": "tp5-frontend-backend",
+  "version": "1.0.0",
+  "description": "Trabajo practico n° 5 de la materia programación y servicios web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
