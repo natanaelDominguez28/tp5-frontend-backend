@@ -1,1 +1,27 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">TP-BACKEND</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" [routerLink]="[ 'producto-form' ]" routerLinkActive="active"><i class="bi bi-list-check"></i> Registro de Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" [routerLink]="[ 'productos' ]" routerLinkActive="active"><i class="bi bi-cart-check"></i> Productos Destacados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['transaccion-form']"><i class="bi bi-currency-exchange"></i> Transacciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['transacciones']"><i class="bi bi-card-list"></i> Listado de Transacciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['ticket']"><i class="bi bi-ticket-detailed"></i> Tickets</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

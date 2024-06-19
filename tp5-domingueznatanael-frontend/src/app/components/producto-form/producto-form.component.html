@@ -1,1 +1,29 @@
-<p>producto-form works!</p>
+<div class="container">
+    <form>
+        <div class="mb-3">
+          <label for="txtNombre" class="form-label">Nombre: </label>
+          <input type="text" class="form-control" id="txtNombre"  name="nombre" [(ngModel)]="producto.nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="txtDescripcion" class="form-label">Descripcion:</label>
+          <input type="text" class="form-control" id="txtDescripcion" name="descripcion" [(ngModel)]="producto.descripcion" required>
+        </div>
+        <div class="mb-3">
+            <label for="txtImagen" class="form-label">URL Imagen:</label>
+            <input type="text" class="form-control" id="txtImagen" name="imagen" [(ngModel)]="producto.imagen" required>
+        </div>
+        <div class="mb-3">
+            <label for="txtPrecio" class="form-label">Precio:</label>
+            <input type="number" class="form-control" id="txtPrecio" name="precio" [(ngModel)]="producto.precio" required>
+        </div>
+        <div class="mb-3">
+            <label for="txtStock" class="form-label">Stock:</label>
+            <input type="number" class="form-control" id="txtStock" name="stock" [(ngModel)]="producto.stock" required>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="productoDestacado" name="destacado" [(ngModel)]="producto.destacado" required>
+          <label class="form-check-label" for="productoDestacado">Destacado</label>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="validar()">REGISTRAR</button>
+      </form>
+</div>
