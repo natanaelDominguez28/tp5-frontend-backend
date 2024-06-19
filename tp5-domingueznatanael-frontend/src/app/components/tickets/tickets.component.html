@@ -1,1 +1,58 @@
-<p>tickets works!</p>
+<h1>Lista de Tickets</h1>
+<button class="btn btn-warning" (click)="agregarTicket()"> Agregar Ticket</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Dni</th>
+            <th scope="col">Precio Real</th>
+            <th scope="col">Tipo de Espectador</th>
+            <th scope="col">Fecha Cobro</th>
+            <th scope="col">Precio a Cobrar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t of tickets">
+            <th scope="row">{{t._id}}</th>
+            <td>{{t.dni}}</td>
+            <td>{{t.precioReal}}</td>
+            <td>{{t.tipoEspectador}}</td>
+            <td>{{t.fechaCobro| date: 'dd/MM/yyyy'}}</td>
+            <td>{{t.precioCobrado}}</td>
+            <td>
+                <button class="btn btn-success" (click)="modificarTicket(t)"> Modificar</button>
+                <button class="btn btn-danger" (click)="eliminarTicket(t)"> Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4 class="">Resumen</h4>
+<div>
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th scope="col" colspan="2">Categoria</th>
+        <th scope="col" colspan="2" class="text-center">Cantidad</th>
+        <th scope="col" colspan="2" class="text-center">Monto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" colspan="2">Local</th>
+        <td colspan="2" class="text-center">{{ contl }}</td>
+        <td colspan="2" class="text-center">{{ montl | currency }}</td>
+      </tr>
+      <tr>
+        <th scope="row" colspan="2">Extranjero</th>
+        <td colspan="2" class="text-center">{{ conte }}</td>
+        <td colspan="2" class="text-center">{{ monte | currency }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row" colspan="4" class="text-end">Total</th>
+        <td colspan="2" class="text-center">{{ montoTotal | currency }}</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
